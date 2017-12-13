@@ -12,11 +12,16 @@ import android.util.Log;
 public class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+        /*
+            2.接收SendDemo 发出的广播
+            从intent中取出值
+            传给Myervice
+         */
         Log.i("cen","onReceive -- 启动ServiceDemo 中的 MyService");
         long a = intent.getLongExtra("a",-1);
         long b = intent.getLongExtra("b",-1);
 
-        Intent intentService = new Intent(context,MyService.class);
+        Intent intentService = new Intent(context,MyServSice.class);
         intentService.putExtra("a",a);
         intentService.putExtra("b",b);
         context.startService(intentService);
