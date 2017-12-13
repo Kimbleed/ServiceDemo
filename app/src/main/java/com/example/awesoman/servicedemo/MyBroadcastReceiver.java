@@ -21,7 +21,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         long a = intent.getLongExtra("a",-1);
         long b = intent.getLongExtra("b",-1);
 
-        Intent intentService = new Intent(context,MyServSice.class);
+        Intent intentService = new Intent(context,MyService.class);
         intentService.putExtra("a",a);
         intentService.putExtra("b",b);
         context.startService(intentService);
